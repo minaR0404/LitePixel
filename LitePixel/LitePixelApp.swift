@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ImageResizeApp: App {
+struct LitePixelApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
