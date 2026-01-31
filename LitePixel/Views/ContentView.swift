@@ -28,11 +28,25 @@ struct ContentView: View {
 
                 // 画像プレビュー
                 if let image = selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxHeight: 300)
-                        .cornerRadius(12)
+                    ZStack(alignment: .topTrailing) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxHeight: 300)
+                            .cornerRadius(12)
+
+                        // ×ボタン
+                        Button {
+                            selectedImage = nil
+                            originalData = nil
+                            selectedItem = nil
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.title2)
+                                .foregroundStyle(.white, .black.opacity(0.6))
+                        }
+                        .padding(8)
+                    }
 
                     // 元画像サイズ
                     if let data = originalData {
