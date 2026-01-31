@@ -32,7 +32,7 @@ struct ContentView: View {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
-                            .frame(maxHeight: 300)
+                            .frame(height: 300)
                             .cornerRadius(12)
 
                         // ×ボタン
@@ -43,10 +43,11 @@ struct ContentView: View {
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .font(.title2)
-                                .foregroundStyle(.white, .black.opacity(0.6))
+                                .foregroundStyle(.white, .red)
                         }
                         .padding(8)
                     }
+                    .frame(height: 300)
 
                     // 元画像サイズ
                     if let data = originalData {
