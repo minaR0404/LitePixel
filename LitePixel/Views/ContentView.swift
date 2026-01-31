@@ -15,14 +15,10 @@ struct ContentView: View {
                 VStack(spacing: 8) {
                     HStack(spacing: 8) {
                         Image(systemName: "sparkles")
-                            .font(.title)
+                            .font(.system(size: 28, weight: .medium))
                             .foregroundColor(.blue)
                         Text("LitePixel")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Image(systemName: "arrow.down.right.and.arrow.up.left")
-                            .font(.title2)
-                            .foregroundColor(.green)
+                            .font(.system(size: 34, weight: .bold, design: .rounded))
                     }
                     Text("画像を圧縮してファイルサイズを軽くしよう")
                         .font(.subheadline)
