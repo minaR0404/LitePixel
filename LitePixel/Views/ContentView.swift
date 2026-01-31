@@ -5,7 +5,7 @@ struct ContentView: View {
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedImage: UIImage?
     @State private var originalData: Data?
-    @State private var compressionQuality: Double = 0.5
+    @State private var compressionRate: Double = 0.5
     @State private var showResult = false
 
     var body: some View {
@@ -60,9 +60,9 @@ struct ContentView: View {
 
                     // 圧縮率スライダー
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("圧縮率: \(Int((1.0 - compressionQuality) * 100))%")
+                        Text("圧縮率: \(Int(compressionRate * 100))%")
                             .font(.headline)
-                        Slider(value: $compressionQuality, in: 0.0...1.0, step: 0.1)
+                        Slider(value: $compressionRate, in: 0.0...1.0, step: 0.1)
                     }
                     .padding(.horizontal)
 
@@ -120,7 +120,7 @@ struct ContentView: View {
                     ResultView(
                         originalImage: image,
                         originalData: original,
-                        quality: compressionQuality
+                        quality: 1.0 - compressionRate
                     )
                 }
             }
