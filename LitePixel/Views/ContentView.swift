@@ -48,6 +48,9 @@ struct ContentView: View {
                         .padding(8)
                     }
                     .frame(height: 300)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(12)
 
                     // 元画像サイズ
                     if let data = originalData {
