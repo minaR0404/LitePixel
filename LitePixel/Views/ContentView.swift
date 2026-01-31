@@ -61,19 +61,21 @@ struct ContentView: View {
                     .padding(.horizontal)
 
                 } else {
-                    // プレースホルダー
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.gray.opacity(0.2))
-                        .frame(height: 300)
-                        .overlay {
-                            VStack {
-                                Image(systemName: "photo")
-                                    .font(.system(size: 50))
-                                    .foregroundColor(.gray)
-                                Text("画像を選択してください")
-                                    .foregroundColor(.gray)
+                    // プレースホルダー（タップで画像選択）
+                    PhotosPicker(selection: $selectedItem, matching: .images) {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(height: 300)
+                            .overlay {
+                                VStack {
+                                    Image(systemName: "photo.badge.plus")
+                                        .font(.system(size: 50))
+                                        .foregroundColor(.gray)
+                                    Text("タップして画像を選択")
+                                        .foregroundColor(.gray)
+                                }
                             }
-                        }
+                    }
                 }
 
                 Spacer()
