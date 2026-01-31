@@ -11,6 +11,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                // ヘッダー
+                VStack(spacing: 8) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "sparkles")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                        Text("LitePixel")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Image(systemName: "arrow.down.right.and.arrow.up.left")
+                            .font(.title2)
+                            .foregroundColor(.green)
+                    }
+                    Text("画像を圧縮してファイルサイズを軽くしよう")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .padding(.top)
+
                 // 画像プレビュー
                 if let image = selectedImage {
                     Image(uiImage: image)
@@ -76,7 +95,7 @@ struct ContentView: View {
                 .padding(.horizontal)
             }
             .padding()
-            .navigationTitle("画像圧縮")
+            .navigationBarTitleDisplayMode(.inline)
             .onChange(of: selectedItem) { _, newItem in
                 loadImage(from: newItem)
             }
