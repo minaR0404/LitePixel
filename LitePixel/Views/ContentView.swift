@@ -10,7 +10,8 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            ScrollView {
+                VStack(spacing: 20) {
                 // ヘッダー
                 VStack(spacing: 8) {
                     HStack(spacing: 4) {
@@ -98,8 +99,6 @@ struct ContentView: View {
                     }
                 }
 
-                Spacer()
-
                 // 画像選択ボタン
                 PhotosPicker(selection: $selectedItem, matching: .images) {
                     Label("写真を選択", systemImage: "photo.on.rectangle")
@@ -111,8 +110,9 @@ struct ContentView: View {
                         .cornerRadius(12)
                 }
                 .padding(.horizontal)
+                }
+                .padding()
             }
-            .padding()
             .navigationBarTitleDisplayMode(.inline)
             .onChange(of: selectedItem) { _, newItem in
                 loadImage(from: newItem)
