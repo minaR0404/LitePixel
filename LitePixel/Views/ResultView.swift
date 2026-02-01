@@ -111,6 +111,7 @@ struct ResultView: View {
             .sheet(isPresented: $showShareSheet) {
                 if let image = compressedImage {
                     ShareSheet(items: [image])
+                        .presentationDetents([.medium, .large])
                 }
             }
         }
