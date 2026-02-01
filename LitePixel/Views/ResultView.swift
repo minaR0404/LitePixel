@@ -11,6 +11,7 @@ struct ResultView: View {
     @State private var compressedImage: UIImage?
     @State private var showSaveAlert = false
     @State private var saveMessage = ""
+    @State private var showShareSheet = false
 
     var body: some View {
         NavigationStack {
@@ -75,8 +76,8 @@ struct ResultView: View {
                         }
 
                         // 共有
-                        if let image = compressedImage {
-                            ShareLink(item: Image(uiImage: image), preview: SharePreview("圧縮画像", image: Image(uiImage: image))) {
+                        if compressedImage != nil {
+                            Button(action: { showShareSheet = true }) {
                                 Label("共有", systemImage: "square.and.arrow.up")
                                     .font(.headline)
                                     .frame(maxWidth: .infinity)
@@ -107,6 +108,11 @@ struct ResultView: View {
             } message: {
                 Text(saveMessage)
             }
+            .sheet(isPresented: $showShareSheet) {
+                if let image = compressedImage {
+                    ShareSheet(items: [image])
+                }
+            }
         }
     }
 
@@ -123,6 +129,17 @@ struct ResultView: View {
         saveMessage = "カメラロールに保存しました"
         showSaveAlert = true
     }
+}
+
+// 共有シート
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
 
 #Preview {
