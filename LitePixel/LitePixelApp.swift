@@ -4,7 +4,7 @@ import SwiftUI
 struct LitePixelApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
