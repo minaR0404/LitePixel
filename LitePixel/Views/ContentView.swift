@@ -13,11 +13,12 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 // ヘッダー
                 VStack(spacing: 8) {
-                    HStack(spacing: 12) {
+                    HStack(spacing: 4) {
                         Image("HeaderIcon")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 40, height: 40)
+                            .frame(width: 44, height: 44)
+                            .clipped()
                         Text("LitePixel")
                             .font(.system(size: 34, weight: .bold, design: .rounded))
                     }
