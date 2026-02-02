@@ -13,16 +13,17 @@ struct ContentView: View {
             ScrollView {
                 VStack(spacing: 20) {
                 // ヘッダー
-                VStack(spacing: 12) {
+                VStack(spacing: 4) {
                     Image("HeaderIcon")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80, height: 80)
 
                     Text("LitePixel")
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                }
 
-                    Text("画像を圧縮してファイルサイズを軽くしよう")
+                Text("画像を圧縮してファイルサイズを軽くしよう")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
