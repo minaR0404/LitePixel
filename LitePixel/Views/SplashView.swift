@@ -7,7 +7,7 @@ struct SplashView: View {
 
     var body: some View {
         if isActive {
-            ContentView()
+            MainView()
         } else {
             VStack(spacing: 16) {
                 Image("HeaderIcon")
@@ -15,7 +15,7 @@ struct SplashView: View {
                     .scaledToFit()
                     .frame(width: 120, height: 120)
 
-                Text("LitePixel")
+                Text("OkuPic")
                     .font(.system(size: 40, weight: .bold, design: .rounded))
             }
             .scaleEffect(scale)

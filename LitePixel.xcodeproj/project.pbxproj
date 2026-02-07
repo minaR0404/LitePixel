@@ -268,8 +268,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LitePixel/Info.plist;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "圧縮した画像を保存するために必要です";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "写真を選択するために必要です";
+				INFOPLIST_KEY_CFBundleDisplayName = OkuPic;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "最適化した画像を保存するために必要です";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "最適化する写真を選択するために必要です";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,8 +305,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LitePixel/Info.plist;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "圧縮した画像を保存するために必要です";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "写真を選択するために必要です";
+				INFOPLIST_KEY_CFBundleDisplayName = OkuPic;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "最適化した画像を保存するために必要です";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "最適化する写真を選択するために必要です";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
